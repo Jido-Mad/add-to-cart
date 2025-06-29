@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 const products = [
   {
     id: 1,
@@ -34,6 +33,7 @@ const Shop = () => {
         <h1 className="text-3xl font-bold text-gray-800">Shop</h1>
         <Link to={"/cart"}>
           <button className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition flex items-center">
+            {/*svg for the cart icon*/}
             <svg
               className="w-5 h-5 mr-2"
               fill="none"
