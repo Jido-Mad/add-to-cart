@@ -1,31 +1,31 @@
-const Shop = () => {
-  const products = [
-    {
-      id: 1,
-      name: "Laptop",
-      price: 999.99,
-      image: "https://via.placeholder.com/150?text=Laptop",
-    },
-    {
-      id: 2,
-      name: "Headphones",
-      price: 89.99,
-      image: "https://via.placeholder.com/150?text=Headphones",
-    },
-    {
-      id: 3,
-      name: "Smartphone",
-      price: 699.99,
-      image: "https://via.placeholder.com/150?text=Smartphone",
-    },
-    {
-      id: 4,
-      name: "Watch",
-      price: 199.99,
-      image: "https://via.placeholder.com/150?text=Watch",
-    },
-  ];
+const products = [
+  {
+    id: 1,
+    name: "Laptop",
+    price: 999.99,
+    image: "./src/assets/laptop.jpg",
+  },
+  {
+    id: 2,
+    name: "Headphones",
+    price: 89.99,
+    image: "./src/assets/headphone.jpg",
+  },
+  {
+    id: 3,
+    name: "Smartphone",
+    price: 699.99,
+    image: "./src/assets/smartphone.jpg",
+  },
+  {
+    id: 4,
+    name: "Watch",
+    price: 199.99,
+    image: "./src/assets/watch.jpg",
+  },
+];
 
+const Shop = () => {
   return (
     <div className="max-w-6xl mx-auto p-5">
       <div className="flex justify-between items-center mb-6">
