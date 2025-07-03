@@ -1,8 +1,7 @@
 import Shop from "./Components/Shop.jsx";
 import Cart from "./Components/Cart.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { CartProvider } from "./CartContext.jsx";
-
+import { CartProvider } from "./Components/CartContext.jsx";
 const router = createBrowserRouter([
   {
     path: "/",

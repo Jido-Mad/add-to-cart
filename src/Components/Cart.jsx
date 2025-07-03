@@ -3,7 +3,7 @@ import { FiMinusCircle } from "react-icons/fi";
 import { FiPlusCircle } from "react-icons/fi";
 import { FaCartPlus } from "react-icons/fa";
 import { useContext } from "react";
-import { CartContext } from "../CartContext.jsx";
+import { CartContext } from "./Context.jsx";
 
 const Cart = () => {
   const { cartItems } = useContext(CartContext);

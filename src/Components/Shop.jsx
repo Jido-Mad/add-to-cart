@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import products from "../Products.json";
 import { FaShoppingCart } from "react-icons/fa";
 import { useContext } from "react";
-import { CartContext } from "../CartContext.jsx";
+import { CartContext } from "./Context.jsx";
 
 const Shop = () => {
   const { addToCart } = useContext(CartContext);
