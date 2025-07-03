@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import products from "../Products.json";
 import { FaShoppingCart } from "react-icons/fa";
+import { useContext } from "react";
+import { CartContext } from "../CartContext.jsx";
 
 const Shop = () => {
+  const { addToCart } = useContext(CartContext);
   return (
     <div className="p-8 font-sans">
       <div className="flex justify-around items-center">
@@ -24,7 +27,10 @@ const Shop = () => {
             />
             <h3 className="text-lg font-semibold">{item.name}</h3>
             <p className="text-gray-600 mb-2">{item.price}</p>
-            <button className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">
+            <button
+              onClick={() => addToCart(item)}
+              className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800"
+            >
               Add to Cart
             </button>
           </div>
@@ -33,5 +39,4 @@ const Shop = () => {
     </div>
   );
 };
-
 export default Shop;

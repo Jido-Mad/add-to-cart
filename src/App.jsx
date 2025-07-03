@@ -1,6 +1,7 @@
 import Shop from "./Components/Shop.jsx";
 import Cart from "./Components/Cart.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { CartProvider } from "./CartContext.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <CartProvider>
+      <RouterProvider router={router} />
+    </CartProvider>
+  );
 }
 
 export default App;
