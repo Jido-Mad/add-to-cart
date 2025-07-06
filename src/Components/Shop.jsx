@@ -1,8 +1,10 @@
-import items from "../Products.json";
 import { Link } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
+import { useContext } from "react";
+import { ItemsPortal } from "./Contexts";
 
 function Shop() {
+  const products = useContext(ItemsPortal);
   return (
     <div className="p-6">
       <div className="flex items-center justify-around mb-8">
@@ -15,7 +17,7 @@ function Shop() {
         </Link>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
-        {items.map((item) => (
+        {products.map((item) => (
           <div
             key={item.id}
             className="flex flex-col items-center border rounded-lg shadow-md p-4 w-64 text-center gap-2 justify-around"
