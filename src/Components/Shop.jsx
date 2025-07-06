@@ -1,4 +1,3 @@
-import React from "react";
 import items from "../Products.json";
 import { Link } from "react-router-dom";
 import { BsCart4 } from "react-icons/bs";
@@ -6,9 +5,9 @@ import { BsCart4 } from "react-icons/bs";
 function Shop() {
   return (
     <div className="p-6">
-      <div className=" flex items-center justify-around mb-8">
+      <div className="flex items-center justify-around mb-8">
         <h1 className="text-3xl font-bold text-center">Shop</h1>
-        <Link to={"/Cart"}>
+        <Link to="/cart">
           <button className="flex items-center gap-2 p-4 bg-blue-600 text-white rounded-md hover:bg-blue-500 cursor-pointer">
             <BsCart4 />
             Go to Cart

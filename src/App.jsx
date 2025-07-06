@@ -1,20 +1,16 @@
-import Shop from "./Components/Shop.jsx";
-import Cart from "./Components/Cart.jsx";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Shop />,
-  },
-  {
-    path: "/Cart",
-    element: <Cart />,
-  },
-]);
+import { Outlet } from "react-router-dom";
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      <header className="p-4 bg-gray-800 text-white text-center">
+        <h1>My Store</h1>
+      </header>
+      <main>
+        <Outlet />
+      </main>
+    </div>
+  );
 }
 
 export default App;
