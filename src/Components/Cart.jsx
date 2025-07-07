@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import { BsFillCartPlusFill } from "react-icons/bs";
+import { useContext } from "react";
+import { ItemsPortal } from "./Contexts.jsx";
 
 function Cart() {
-  const cartItems = []; // Replace with actual cart state
+  const { cart } = useContext(ItemsPortal);
 
   return (
     <div className="p-6 flex flex-col items-center justify-center gap-10">
@@ -17,16 +19,20 @@ function Cart() {
           </Link>
         </div>
       </div>
-      <div className="w-[70%] min-h-40 flex items-center justify-start border border-zinc-500 rounded-md px-6 shadow-md">
-        {cartItems.length === 0 ? (
-          <p className="w-full text-center text-gray-700">Your cart is empty</p>
+      <div className="w-[70%] min-h-40 flex flex-col items-center justify-start border border-zinc-500 rounded-md px-6 shadow-md">
+        {cart.length === 0 ? (
+          <div className="min-h-40 flex items-center justify-center">
+            <p className="w-full text-center text-gray-700">
+              Your cart is empty
+            </p>
+          </div>
         ) : (
-          cartItems.map((item) => (
+          cart.map((item) => (
             <div
               key={item.id}
-              className="w-full flex flex-row justify-between border-b rounded-sm border-zinc-300 p-4"
+              className="w-full flex flex-row justify-between items-center border-b rounded-sm border-zinc-300 p-4"
             >
-              <img className="w-16" src={item.image} alt={item.name} />
+              <img className="w-12" src={item.image} alt={item.name} />
               <p>{item.name}</p>
               <p>${item.price}</p>
               <p>{item.quantity}</p>

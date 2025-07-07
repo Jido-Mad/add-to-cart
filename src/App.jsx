@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import { ItemsProvider } from "./Components/ItemsProvider.jsx";
 
 function App() {
   return (
@@ -7,7 +8,9 @@ function App() {
         <h1>My Store</h1>
       </header>
       <main>
-        <Outlet />
+        <ItemsProvider>
+          <Outlet />
+        </ItemsProvider>
       </main>
     </div>
   );
