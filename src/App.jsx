@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { ItemsProvider } from "./Components/ItemsProvider.jsx";
+import ItemsProvider from "./Components/ItemsProvider.jsx";
 
 function App() {
   return (

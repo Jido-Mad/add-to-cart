@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ItemsPortal } from "./Contexts.jsx";
 
-export const ItemsProvider = ({ children }) => {
+function ItemsProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   function addToCart(product) {
@@ -9,4 +9,6 @@ export const ItemsProvider = ({ children }) => {
   }
 
   return <ItemsPortal value={{ cart, addToCart }}>{children}</ItemsPortal>;
-};
+}
+
+export default ItemsProvider;
