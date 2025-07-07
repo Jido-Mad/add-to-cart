@@ -2,13 +2,14 @@ import { Link } from "react-router-dom";
 import { BsFillCartPlusFill } from "react-icons/bs";
 import { useContext } from "react";
 import { ItemsPortal } from "./Contexts.jsx";
+import Quantitiy from "./Quantitiy.jsx";
 
 function Cart() {
   const { cart } = useContext(ItemsPortal);
 
   return (
     <div className="p-6 flex flex-col items-center justify-center gap-10">
-      <div className="w-[70%] flex items-center justify-between">
+      <div className="w-[90%] flex items-center justify-between">
         <h1 className="text-3xl font-bold text-center">Your Cart</h1>
         <div className="flex justify-center">
           <Link to="/">
@@ -19,7 +20,7 @@ function Cart() {
           </Link>
         </div>
       </div>
-      <div className="w-[70%] min-h-40 flex flex-col items-center justify-start border border-zinc-500 rounded-md px-6 shadow-md">
+      <div className="w-[90%] min-h-40 flex flex-col items-center justify-start border border-zinc-500 rounded-md shadow-md">
         {cart.length === 0 ? (
           <div className="min-h-40 flex items-center justify-center">
             <p className="w-full text-center text-gray-700">
@@ -30,13 +31,13 @@ function Cart() {
           cart.map((item) => (
             <div
               key={item.id}
-              className="w-full flex flex-row justify-between items-center border-b rounded-sm border-zinc-300 p-4"
+              className="w-full flex flex-row justify-between items-center border-b rounded-sm border-zinc-300 p-4 hover:bg-gray-50"
             >
               <img className="w-12" src={item.image} alt={item.name} />
               <p>{item.name}</p>
               <p>${item.price}</p>
-              <p>{item.quantity}</p>
-              <button className="text-red-700 hover:text-red-600 hover:cursor-pointer">
+              <Quantitiy quantity={item.quantity} />
+              <button className="rounded-md w-20 h-10 text-red-600 hover:text-white hover:bg-red-500 hover:cursor-pointer transition ease-in duration-100">
                 Remove
               </button>
             </div>
