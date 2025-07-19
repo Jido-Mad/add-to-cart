@@ -3,7 +3,7 @@ import ItemsProvider from "./Components/ItemsProvider.jsx";
 
 function App() {
   return (
-    <div>
+    <>
       <header className="p-4 bg-gray-800 text-white text-center">
         <h1>TechStore</h1>
       </header>
@@ -12,7 +12,7 @@ function App() {
           <Outlet />
         </ItemsProvider>
       </main>
-    </div>
+    </>
   );
 }
 
