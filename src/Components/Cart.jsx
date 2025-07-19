@@ -6,10 +6,6 @@ import Quantitiy from "./Quantitiy.jsx";
 
 function Cart() {
   const { cart } = useContext(ItemsPortal);
-  function removeItem() {
-    const itemDiv = document.getElementById("item-div");
-    itemDiv.remove();
-  }
 
   return (
     <div className="p-6 flex flex-col items-center justify-center gap-10">
@@ -34,7 +30,6 @@ function Cart() {
         ) : (
           cart.map((item) => (
             <div
-              id="item-div"
               key={item.id}
               className="w-full flex flex-row justify-between items-center border-b rounded-sm border-zinc-300 p-4 hover:bg-gray-50"
             >
