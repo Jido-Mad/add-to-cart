@@ -37,10 +37,7 @@ function Cart() {
               <p>{item.name}</p>
               <p>${item.price}</p>
               <Quantitiy />
-              <button
-                onClick={removeItem}
-                className="rounded-md w-20 h-10 text-red-600 hover:text-white hover:bg-red-500 hover:cursor-pointer transition ease-in duration-100"
-              >
+              <button className="rounded-md w-20 h-10 text-red-600 hover:text-white hover:bg-red-500 hover:cursor-pointer transition ease-in duration-100">
                 Remove
               </button>
             </div>
