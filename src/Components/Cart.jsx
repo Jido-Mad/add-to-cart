@@ -5,7 +5,7 @@ import { ItemsPortal } from "./Contexts.jsx";
 import Quantitiy from "./Quantitiy.jsx";
 
 function Cart() {
-  const { cart } = useContext(ItemsPortal);
+  const { cart, removeFromCart } = useContext(ItemsPortal);
 
   return (
     <div className="p-6 flex flex-col items-center justify-center gap-10">
@@ -37,7 +37,10 @@ function Cart() {
               <p>{item.name}</p>
               <p>${item.price}</p>
               <Quantitiy />
-              <button className="rounded-md w-20 h-10 text-red-600 hover:text-white hover:bg-red-500 hover:cursor-pointer transition ease-in duration-100">
+              <button
+                onClick={() => removeFromCart(item.id)}
+                className="rounded-md w-20 h-10 text-red-600 hover:text-white hover:bg-red-500 hover:cursor-pointer transition ease-in duration-100"
+              >
                 Remove
               </button>
             </div>
